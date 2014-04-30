@@ -1,0 +1,51 @@
+#header {
+    background: #f03c79;
+    color: #eee;
+}
+#header a:link {
+    color: #222;
+    text-decoration: underline;
+}
+#header a:hover {
+    color: #fff;
+}
+#branding h1 {
+    color: #eee;
+    font-weight: bold;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background: #f03c79;
+    color: #fafafa;
+}
+
+.module h2 a:link, .module h2 a:visited,
+.module caption a:link .module caption a:visited,
+.inline-group h2 a:link, .inline-group h2 a:visited {
+    color: #fafafa;
+}
+
+fieldset.collapsed h2 a:link, fieldset.collapsed h2 a:visited {
+    color: #f03c79;
+}
+
+a:link, a:visited {
+    color: #f03c79;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #222;
+}
+
+a.section:hover {
+    text-decoration: underline;
+}
+
+.row1 {
+    background: #E5EFF5;
+}
+
+h1 {
+    color: #222;
+}
