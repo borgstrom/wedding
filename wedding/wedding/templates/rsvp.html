@@ -1,0 +1,70 @@
+<form name="people" id="people" method="POST" action="/save">
+    {% csrf_token %}
+
+    <h3>{{ invitation.name }}</h3>
+
+    <p>Hooray! We found your invitation. Please confirm your guest details below.</p>
+
+    {% for person in invitation.people.all %}
+    <h5 class="huge-margin-top">Guest #{{ forloop.counter }}</h5>
+
+    <div class="row text-left">
+        <div class="medium-6 medium-offset-3 columns">
+            <label>
+                Attending?
+                <select name="person.{{ forloop.counter0 }}.attending"><option value="0">No</option><option selected="selected" value="1">Yes</option></select>
+            </label>
+        </div>
+        <div class="small-6 medium-3 medium-offset-3 columns">
+            <label>
+                First Name
+                <input type="text" name="person.{{ forloop.counter0 }}.first_name" value="{{ person.first_name }}">
+            </label>
+        </div>
+        <div class="small-6 medium-3 columns end">
+            <label>
+                Last Name
+                <input type="text" name="person.{{ forloop.counter0 }}.last_name" value="{{ person.last_name }}">
+            </label>
+        </div>
+    </div>
+    <div class="row text-left">
+        <div class="medium-6 medium-offset-3 columns">
+            <label>
+                Dietary restrictions?
+                <textarea name="person.{{ forloop.counter0 }}.dietary_restrictions"></textarea>
+            </label>
+        </div>
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="huge-margin-top submit button">Save Guest Details</button>
+</form>
+
+<script type="text/javascript">
+    var $people_form = $("form#people"),
+        $container = $("#container");
+
+        $people_form.submit(function(event) {
+            return;
+        $.ajax({
+            url: '/save/',
+            type: 'POST',
+            data: $(this).serialize(),
+            success: function(data, status, jqXHR) {
+                $people_form.fadeOut(function() {
+                    $container.append(data);
+                });
+            },
+            error: function(jqXHR, status) {
+                var $error = $('<div data-alert class="alert-box alert radius">Oops! We failed to save your response. Yell at Evan to fix this!</div>');
+                $people_form.append($error);
+                $('html, body').animate({
+                    scrollTop: $error.offset().top
+                }, 500);
+            }
+        });
+
+        event.preventDefault();
+    });
+</script>

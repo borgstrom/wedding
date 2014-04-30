@@ -1,10 +1,8 @@
 @import "settings";
-@import "foundation";
 
-// Or selectively include components
-// @import
+@import
 //   "foundation/components/accordion",
-//   "foundation/components/alert-boxes",
+   "foundation/components/alert-boxes",
 //   "foundation/components/block-grid",
 //   "foundation/components/breadcrumbs",
 //   "foundation/components/button-groups",
@@ -13,8 +11,8 @@
 //   "foundation/components/dropdown",
 //   "foundation/components/dropdown-buttons",
 //   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
+   "foundation/components/forms",
+   "foundation/components/grid",
 //   "foundation/components/inline-lists",
 //   "foundation/components/joyride",
 //   "foundation/components/keystrokes",
@@ -35,6 +33,39 @@
 //   "foundation/components/thumbs",
 //   "foundation/components/tooltips",
 //   "foundation/components/top-bar",
-//   "foundation/components/type",
+   "foundation/components/type",
 //   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
+   "foundation/components/visibility";
+
+/* Reusable margins & paddings */
+/* ie. top-margin or left-padding-small */
+@each $side in top, bottom, left, right {
+  @each $attr in margin, padding {
+    .#{$attr}-#{$side} {
+      #{$attr}-#{$side}: rem-calc(10);
+    }
+    .tiny-#{$attr}-#{$side} {
+      #{$attr}-#{$side}: rem-calc(4);
+    }
+    .small-#{$attr}-#{$side} {
+      #{$attr}-#{$side}: rem-calc(8);
+    }
+    .large-#{$attr}-#{$side} {
+      #{$attr}-#{$side}: rem-calc(16);
+    }
+    .huge-#{$attr}-#{$side} {
+      #{$attr}-#{$side}: rem-calc(20);
+    }
+    .no-#{$attr}-#{$side} {
+      #{$attr}-#{$side}: 0;
+    }
+  }
+}
+
+body {
+  background-color: #fff;
+  background-image: radial-gradient(#fafafa 15%, transparent 16%),
+                    radial-gradient(#fafafa 15%, transparent 16%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}

@@ -11,9 +11,6 @@ class Invitation(models.Model):
         max_length=128,
         help_text='An informal name for this invitation'
     )
-    guests = models.IntegerField(
-        help_text='The number of guests on this invitation'
-    )
     responded = models.BooleanField(
         default=False,
         help_text='Has this invitation been responded to'
@@ -21,6 +18,10 @@ class Invitation(models.Model):
     updated = models.DateTimeField(
         auto_now=True
     )
+
+    @property
+    def guests(self):
+        return self.people.filter(attending=True).count()
 
 
 class Person(models.Model):

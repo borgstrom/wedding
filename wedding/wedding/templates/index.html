@@ -1,5 +1,76 @@
 {% extends "base.html" %}
 
+{% block title %}Borgström Wedding &mdash; RSVP{% endblock %}
+
 {% block content %}
-Wedding
+<div class="row">
+    <div class="column text-center" id="container">
+        <h1 class="huge-margin-top">Borgström Wedding</h1>
+
+        <hr>
+
+        <form name="lookup" id="lookup">
+            <p>Please enter your name to lookup your invitation</p>
+            <div class="row">
+                <div class="medium-6 medium-offset-3 columns">
+                    <div class="row">
+                        <div class="small-5 columns">
+                            <input type="text" name="first_name" id="firstname" placeholder="First Name">
+                        </div>
+                        <div class="small-5 columns">
+                            <input type="text" name="last_name" id="lastname" placeholder="Last Name">
+                        </div>
+                        <div class="small-2 columns">
+                            <button class="submit button postfix">Go</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    var $lookup_form = $("form#lookup"),
+        $first_name = $("#firstname"),
+        $last_name = $("#lastname"),
+        $container = $("#container");
+
+    $first_name.focus();
+
+    $lookup_form.submit(function(event) {
+        $.ajax({
+            url: '/lookup/',
+            data: {
+                'first_name': $first_name.val(),
+                'last_name': $last_name.val()
+            },
+            success: function(data, status, jqXHR) {
+                $lookup_form.fadeOut(function() {
+                    $container.append(data);
+                });
+            },
+            error: function(jqXHR, status) {
+                var $error = $('<div data-alert class="alert-box alert radius">Sorry, we could not find your invitation</div>');
+                $lookup_form.append($error);
+                $('html, body').animate({
+                    scrollTop: $error.offset().top
+                }, 500);
+            }
+        });
+        event.preventDefault();
+    });
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50495323-1', 'borgstrom.ca');
+  ga('send', 'pageview');
+</script>
 {% endblock %}
