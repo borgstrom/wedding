@@ -1,0 +1,23 @@
+# ignore compiled python
+*.pyc
+
+# ignore vim swap files
+.*.sw*
+
+# ignore the media directory
+luminato/media
+
+# ignore tags file
+luminato/tags
+
+# ignore development search index
+luminato/whoosh_index*
+
+# ignore our sass cache directory
+.sass-cache
+
+# Vagrant
+.vagrant
+
+# OSX cruft
+.DS_Store
