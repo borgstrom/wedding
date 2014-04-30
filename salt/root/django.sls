@@ -47,8 +47,8 @@ curl:
     - name: "source {{ virtualenv }}/bin/activate; pip install -r {{ project }}/requirements/dev.txt"
     - shell: /bin/bash
     - env:
-        DJANGO_SETTINGS_MODULE: luminato.settings.dev
-        PYTHON_PATH: /vagrant/luminato
+        DJANGO_SETTINGS_MODULE: wedding.settings.dev
+        PYTHON_PATH: /vagrant/wedding
     - user: vagrant
     - require:
       - virtualenv: {{ short_name }}_virtualenv
@@ -62,8 +62,8 @@ curl:
     - require:
       - user: vagrant
     - text:
-      - export DJANGO_SETTINGS_MODULE=luminato.settings.dev
-      - export PYTHONPATH=/vagrant/luminato
+      - export DJANGO_SETTINGS_MODULE=wedding.settings.dev
+      - export PYTHONPATH=/vagrant/wedding
       - source ~/virtualenv/bin/activate
       - cd /vagrant
 

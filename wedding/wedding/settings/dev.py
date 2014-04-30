@@ -13,7 +13,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 STATIC_URL = "/static/"
-STATIC_DIR = project_dir("static")
+STATIC_ROOT = project_dir("static")
 
 MEDIA_URL = "/media/"
-MEDIA_DIR = project_dir("media")
+MEDIA_ROOT = project_dir("media")
