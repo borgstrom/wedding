@@ -38,8 +38,9 @@ class Person(models.Model):
     last_name = models.CharField(
         max_length=128
     )
-    attending = models.BooleanField(
-        default=True
+    attending = models.NullBooleanField(
+        blank=True,
+        null=True
     )
     dietary_restrictions = models.TextField(
         blank=True

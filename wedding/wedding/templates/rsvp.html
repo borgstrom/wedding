@@ -1,5 +1,6 @@
-<form name="people" id="people" method="POST" action="/save">
+<form name="people" id="people" method="POST" action="{% url "save" %}">
     {% csrf_token %}
+    <input type="hidden" name="invitation_id" value="{{ invitation.id }}">
 
     <h3>{{ invitation.name }}</h3>
 
@@ -32,7 +33,7 @@
         <div class="medium-6 medium-offset-3 columns">
             <label>
                 Dietary restrictions?
-                <textarea name="person.{{ forloop.counter0 }}.dietary_restrictions"></textarea>
+                <textarea name="person.{{ forloop.counter0 }}.dietary_restrictions">{{ person.dietary_restrictions }}</textarea>
             </label>
         </div>
     </div>
@@ -46,25 +47,24 @@
         $container = $("#container");
 
         $people_form.submit(function(event) {
-            return;
-        $.ajax({
-            url: '/save/',
-            type: 'POST',
-            data: $(this).serialize(),
-            success: function(data, status, jqXHR) {
-                $people_form.fadeOut(function() {
-                    $container.append(data);
-                });
-            },
-            error: function(jqXHR, status) {
-                var $error = $('<div data-alert class="alert-box alert radius">Oops! We failed to save your response. Yell at Evan to fix this!</div>');
-                $people_form.append($error);
-                $('html, body').animate({
-                    scrollTop: $error.offset().top
-                }, 500);
-            }
-        });
+            $.ajax({
+                url: '/save/',
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function(data, status, jqXHR) {
+                    $people_form.fadeOut(function() {
+                        $container.append(data);
+                    });
+                },
+                error: function(jqXHR, status) {
+                    var $error = $('<div data-alert class="alert-box alert radius">Oops! We failed to save your response. Yell at Evan to fix this!</div>');
+                    $people_form.append($error);
+                    $('html, body').animate({
+                        scrollTop: $error.offset().top
+                    }, 500);
+                }
+            });
 
-        event.preventDefault();
+            event.preventDefault();
     });
 </script>

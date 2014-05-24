@@ -39,9 +39,9 @@
 // Global
 
 // We use these to control various global styles
-// $body-bg: #fff;
-// $body-font-color: #222;
-$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-bg: #ECDD28;
+$body-font-color: #353535;
+$body-font-family: 'Josefin Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -54,7 +54,7 @@ $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #3D78F0;
+$primary-color: scale-color(#ECDD28, $lightness: -25%);
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -119,10 +119,9 @@ $primary-color: #3D78F0;
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
-$header-font-family: Cabin, $body-font-family;
 // $header-font-weight: normal;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: #353535;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -171,7 +170,7 @@ $header-font-family: Cabin, $body-font-family;
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
 // $hr-border-style: solid;
-// $hr-border-color: #ddd;
+$hr-border-color: #353535;
 // $hr-margin: rem-calc(20);
 
 // We use these to style lists
@@ -336,7 +335,7 @@ $header-font-family: Cabin, $body-font-family;
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
-// $button-font-color: #fff;
+$button-font-color: #353535;
 // $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
@@ -349,7 +348,7 @@ $header-font-family: Cabin, $body-font-family;
 // $button-function-factor: -20%;
 
 // We use these to control button border styles.
-// $button-border-width: 0px;
+$button-border-width: 1px;
 // $button-border-style: solid;
 // $bg: $primary-color;
 // $button-border-color: scale-color($bg, $lightness: $button-function-factor);
@@ -511,10 +510,10 @@ $header-font-family: Cabin, $body-font-family;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
-// $input-bg-color: #fff;
-// $input-focus-bg-color: scale-color(#fff, $lightness: -2%);
-// $input-border-color: scale-color(#fff, $lightness: -20%);
-// $input-focus-border-color: scale-color(#fff, $lightness: -40%);
+$input-bg-color: #ECDD28;
+$input-focus-bg-color: scale-color(#ECDD28, $lightness: -2%);
+$input-border-color: scale-color(#ECDD28, $lightness: -20%);
+$input-focus-border-color: scale-color(#ECDD28, $lightness: -40%);
 // $input-border-style: solid;
 // $input-border-width: 1px;
 // $input-border-radius: $global-radius;
@@ -557,7 +556,7 @@ $header-font-family: Cabin, $body-font-family;
 // $glowing-effect-color: $input-focus-border-color;
 
 // Select variables
-// $select-bg-color: #fafafa;
+$select-bg-color: #ECDD28;
 // $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%);
 
 // Inline Lists

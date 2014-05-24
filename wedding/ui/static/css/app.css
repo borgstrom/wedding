@@ -36,11 +36,11 @@ html, body {
   font-size: 100%; }
 
 body {
-  background: white;
-  color: #222222;
+  background: #ecdd28;
+  color: #353535;
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -102,8 +102,8 @@ select {
   padding: 0.875rem 1.5rem 0.875rem 0.875rem;
   font-size: 0.8125rem;
   transition: opacity 300ms ease-out;
-  background-color: #3d78f0;
-  border-color: #165eed;
+  background-color: #beb011;
+  border-color: #a3970f;
   color: white; }
   .alert-box .close {
     font-size: 1.375rem;
@@ -146,9 +146,9 @@ select {
 
 button, .button {
   border-style: solid;
-  border-width: 0px;
+  border-width: 1px;
   cursor: pointer;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -163,14 +163,14 @@ button, .button {
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
   font-size: 1rem;
-  background-color: #3d78f0;
-  border-color: #1156e0;
-  color: white;
+  background-color: #beb011;
+  border-color: #988c0e;
+  color: #353535;
   transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #1156e0; }
+    background-color: #988c0e; }
   button:hover, button:focus, .button:hover, .button:focus {
-    color: white; }
+    color: #353535; }
   button.secondary, .button.secondary {
     background-color: #e7e7e7;
     border-color: #b9b9b9;
@@ -182,19 +182,19 @@ button, .button {
   button.success, .button.success {
     background-color: #43ac6a;
     border-color: #368a54;
-    color: white; }
+    color: #353535; }
     button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
       background-color: #368a54; }
     button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
-      color: white; }
+      color: #353535; }
   button.alert, .button.alert {
     background-color: #f04124;
     border-color: #cf280e;
-    color: white; }
+    color: #353535; }
     button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
       background-color: #cf280e; }
     button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
-      color: white; }
+      color: #353535; }
   button.large, .button.large {
     padding-top: 1.125rem;
     padding-right: 2.25rem;
@@ -228,18 +228,18 @@ button, .button {
   button.round, .button.round {
     border-radius: 1000px; }
   button.disabled, button[disabled], .button.disabled, .button[disabled] {
-    background-color: #3d78f0;
-    border-color: #1156e0;
-    color: white;
+    background-color: #beb011;
+    border-color: #988c0e;
+    color: #353535;
     cursor: default;
     opacity: 0.7;
     box-shadow: none; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-      background-color: #1156e0; }
+      background-color: #988c0e; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-      color: white; }
+      color: #353535; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-      background-color: #3d78f0; }
+      background-color: #beb011; }
     button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary {
       background-color: #e7e7e7;
       border-color: #b9b9b9;
@@ -256,27 +256,27 @@ button, .button {
     button.disabled.success, button[disabled].success, .button.disabled.success, .button[disabled].success {
       background-color: #43ac6a;
       border-color: #368a54;
-      color: white;
+      color: #353535;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
       button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
         background-color: #368a54; }
       button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
-        color: white; }
+        color: #353535; }
       button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
         background-color: #43ac6a; }
     button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[disabled].alert {
       background-color: #f04124;
       border-color: #cf280e;
-      color: white;
+      color: #353535;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
       button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
         background-color: #cf280e; }
       button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
-        color: white; }
+        color: #353535; }
       button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
         background-color: #f04124; }
 
@@ -328,10 +328,10 @@ select::-ms-expand {
 
 @-moz-document url-prefix() {
   select {
-    background: #fafafa; }
+    background: #ecdd28; }
 
   select:hover {
-    background: #f3f3f3; } }
+    background: #ebda20; } }
 
 /* Attach elements to the beginning or end of an input */
 .prefix, .postfix {
@@ -412,9 +412,9 @@ span.postfix, label.postfix {
 /* We use this to get basic styling on all basic form elements */
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
   -webkit-appearance: none;
-  background-color: white;
+  background-color: #ecdd28;
   font-family: inherit;
-  border: 1px solid #cccccc;
+  border: 1px solid #cbbb12;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.75);
   display: block;
@@ -428,11 +428,11 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   box-sizing: border-box;
   transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
   input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
-    box-shadow: 0 0 5px #999999;
-    border-color: #999999; }
+    box-shadow: 0 0 5px #988d0d;
+    border-color: #988d0d; }
   input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
-    background: #fafafa;
-    border-color: #999999;
+    background: #ecdb23;
+    border-color: #988d0d;
     outline: none; }
   input[type="text"][disabled], fieldset[disabled] input[type="text"], input[type="password"][disabled], fieldset[disabled] input[type="password"], input[type="date"][disabled], fieldset[disabled] input[type="date"], input[type="datetime"][disabled], fieldset[disabled] input[type="datetime"], input[type="datetime-local"][disabled], fieldset[disabled] input[type="datetime-local"], input[type="month"][disabled], fieldset[disabled] input[type="month"], input[type="week"][disabled], fieldset[disabled] input[type="week"], input[type="email"][disabled], fieldset[disabled] input[type="email"], input[type="number"][disabled], fieldset[disabled] input[type="number"], input[type="search"][disabled], fieldset[disabled] input[type="search"], input[type="tel"][disabled], fieldset[disabled] input[type="tel"], input[type="time"][disabled], fieldset[disabled] input[type="time"], input[type="url"][disabled], fieldset[disabled] input[type="url"], textarea[disabled], fieldset[disabled] textarea {
     background-color: #dddddd; }
@@ -449,11 +449,11 @@ textarea[rows] {
 /* Add height value for select elements to match text input height */
 select {
   -webkit-appearance: none !important;
-  background-color: #fafafa;
+  background-color: #ecdd28;
   background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
   background-repeat: no-repeat;
   background-position: 97% center;
-  border: 1px solid #cccccc;
+  border: 1px solid #cbbb12;
   padding: 0.5rem;
   font-size: 0.875rem;
   border-radius: 0;
@@ -461,8 +461,8 @@ select {
   select.radius {
     border-radius: 3px; }
   select:hover {
-    background-color: #f3f3f3;
-    border-color: #999999; }
+    background-color: #ebda20;
+    border-color: #988d0d; }
 
 /* Adjust margin for form elements below */
 input[type="file"], input[type="checkbox"], input[type="radio"], select {
@@ -1423,11 +1423,11 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 
 /* Default Link Styles */
 a {
-  color: #3d78f0;
+  color: #beb011;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
-    color: #165eed; }
+    color: #a3970f; }
   a img {
     border: none; }
 
@@ -1449,17 +1449,17 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: Cabin, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
-  color: #222222;
+  color: #353535;
   text-rendering: optimizeLegibility;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
   line-height: 1.4; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     font-size: 60%;
-    color: #6f6f6f;
+    color: #7c7c7c;
     line-height: 0; }
 
 h1 {
@@ -1482,13 +1482,13 @@ h6 {
 
 .subheader {
   line-height: 1.4;
-  color: #6f6f6f;
+  color: #7c7c7c;
   font-weight: normal;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem; }
 
 hr {
-  border: solid #dddddd;
+  border: solid #353535;
   border-width: 1px 0 0;
   clear: both;
   margin: 1.25rem 0 1.1875rem;
@@ -1565,7 +1565,7 @@ dl dd {
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: #222222;
+  color: #353535;
   border-bottom: 1px dotted #dddddd;
   cursor: help; }
 
@@ -1580,15 +1580,15 @@ blockquote {
   blockquote cite {
     display: block;
     font-size: 0.8125rem;
-    color: #555555; }
+    color: #636363; }
     blockquote cite:before {
       content: "\2014 \0020"; }
     blockquote cite a, blockquote cite a:visited {
-      color: #555555; }
+      color: #636363; }
 
 blockquote, blockquote p {
   line-height: 1.6;
-  color: #6f6f6f; }
+  color: #7c7c7c; }
 
 /* Microformats */
 .vcard {
@@ -2013,8 +2013,21 @@ th.hide-for-touch {
 .no-padding-right {
   padding-right: 0; }
 
-body {
-  background-color: white;
-  background-image: radial-gradient(#fafafa 15%, transparent 16%), radial-gradient(#fafafa 15%, transparent 16%);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px; }
+/* Style the placeholde text */
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #727272; }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #727272;
+  opacity: 1; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #727272;
+  opacity: 1; }
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #727272; }

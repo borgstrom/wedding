@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
 
-from .models import Person
+from .models import Person, Invitation
 
 class DotExpandedDict(dict):
     """
@@ -51,10 +51,35 @@ def lookup(request):
         'invitation': person.invitation
     }
 
-    return render_to_response('rsvp.html', context, RequestContext(request))
+    if person.invitation.responded:
+        template = 'responded.html'
+    else:
+        template = 'rsvp.html'
+
+    return render_to_response(template, context, RequestContext(request))
 
 def save(request):
+    invitation = get_object_or_404(
+        Invitation,
+        id=request.POST['invitation_id']
+    )
+
     persons = DotExpandedDict(request.POST)
-    import ipdb
-    ipdb.set_trace()
+
+    index = 0
+    for person in invitation.people.all():
+        def p_attr(name):
+            "Closure to make getting attrs from persons easier"
+            return persons['person'][str(index)][name]
+
+        person.attending = True if p_attr('attending') == '1' else False
+        person.first_name = p_attr('first_name')
+        person.last_name = p_attr('last_name')
+        person.dietary_restrictions = p_attr('dietary_restrictions')
+        person.save()
+        index += 1
+
+    invitation.responded = True
+    invitation.save()
+
     return render_to_response('thanks.html')

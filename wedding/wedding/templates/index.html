@@ -5,7 +5,7 @@
 {% block content %}
 <div class="row">
     <div class="column text-center" id="container">
-        <h1 class="huge-margin-top">Borgström Wedding</h1>
+        <h1 class="huge-margin-top">Borgström Wedding &mdash; RSVP</h1>
 
         <hr>
 
@@ -43,6 +43,7 @@
     $lookup_form.submit(function(event) {
         $.ajax({
             url: '/lookup/',
+            cache: false,
             data: {
                 'first_name': $first_name.val(),
                 'last_name': $last_name.val()
