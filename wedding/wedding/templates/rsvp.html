@@ -13,7 +13,7 @@
         <div class="medium-6 medium-offset-3 columns">
             <label>
                 Attending?
-                <select name="person.{{ forloop.counter0 }}.attending"><option value="0">No</option><option selected="selected" value="1">Yes</option></select>
+                <select class="attending" name="person.{{ forloop.counter0 }}.attending"><option selected="selected" value="-">&mdash;</option><option value="1">In Person ☺</option><option value="0">In Spirit ☹</option></select>
             </label>
         </div>
         <div class="small-6 medium-3 medium-offset-3 columns">
@@ -47,6 +47,23 @@
         $container = $("#container");
 
         $people_form.submit(function(event) {
+            function show_error(msg) {
+                var $error = $('<div data-alert class="alert-box alert radius">'+msg+'</div>');
+                $people_form.append($error);
+                $('html, body').animate({
+                    scrollTop: $error.offset().top
+                }, 500);
+            }
+
+            var $attending_missing = $("select option[value='-']", $people_form);
+
+            event.preventDefault();
+
+            if ($attending_missing.length > 0) {
+                show_error("Please indicate if all guests are going to be attending or not.");
+                return;
+            }
+
             $.ajax({
                 url: '/save/',
                 type: 'POST',
@@ -57,14 +74,8 @@
                     });
                 },
                 error: function(jqXHR, status) {
-                    var $error = $('<div data-alert class="alert-box alert radius">Oops! We failed to save your response. Yell at Evan to fix this!</div>');
-                    $people_form.append($error);
-                    $('html, body').animate({
-                        scrollTop: $error.offset().top
-                    }, 500);
+                    show_error("Oops! We failed to save your response. Yell at Evan to fix this!");
                 }
             });
-
-            event.preventDefault();
     });
 </script>
