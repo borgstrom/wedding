@@ -33,10 +33,12 @@ class Person(models.Model):
         related_name='people'
     )
     first_name = models.CharField(
-        max_length=64
+        max_length=64,
+        blank=True
     )
     last_name = models.CharField(
-        max_length=128
+        max_length=128,
+        blank=True
     )
     attending = models.NullBooleanField(
         blank=True,
